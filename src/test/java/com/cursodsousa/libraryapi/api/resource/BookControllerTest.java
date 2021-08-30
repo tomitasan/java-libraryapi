@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -25,8 +24,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-
-import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.hamcrest.Matchers.hasSize;
@@ -36,7 +34,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @ActiveProfiles("test")
-@WebMvcTest
+@WebMvcTest(controllers = BookController.class)
 @AutoConfigureMockMvc
 public class BookControllerTest {
 
@@ -51,7 +49,6 @@ public class BookControllerTest {
     @Test
     @DisplayName("Deve criar um livro com sucesso.")
     public void createBookTest() throws Exception{
-
         //envia o dto como json com os dados do livro
         BookDTO dto = BookDTO.builder().author("Artur").title("As aventuras").isbn("001").build();
 
@@ -80,7 +77,6 @@ public class BookControllerTest {
     @Test
     @DisplayName("Deve lançar erro de validação quando não houver os dados suficientes para criação do livro.")
     public void createInvalidBookTest() throws Exception {
-
         String json = new ObjectMapper().writeValueAsString(new BookDTO());
 
         MockHttpServletRequestBuilder request = MockMvcRequestBuilders
@@ -97,7 +93,6 @@ public class BookControllerTest {
     @Test
     @DisplayName("Deve lançar erro ao tentar cadastrar um livro com ISBN já existente.")
     public void createBookWithDuplicatedIsbn() throws Exception {
-
         BookDTO dto = createNewBook();
         String json = new ObjectMapper().writeValueAsString(dto);
         String mensagemErro = "Isbn já cadastrado.";
@@ -250,7 +245,7 @@ public class BookControllerTest {
                 .build();
 
         BDDMockito.given( service.find(Mockito.any(Book.class), Mockito.any(Pageable.class)))
-                .willReturn(new PageImpl<Book>(Arrays.asList(book), PageRequest.of(0, 100), 1));
+                .willReturn(new PageImpl<>(List.of(book), PageRequest.of(0, 100), 1));
 
 
         String queryString = String.format("?title=%s&author=%s&page=0&size=100",

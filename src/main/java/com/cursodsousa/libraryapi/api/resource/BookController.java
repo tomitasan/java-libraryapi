@@ -7,6 +7,9 @@ import com.cursodsousa.libraryapi.model.entity.Book;
 import com.cursodsousa.libraryapi.service.BookService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -26,6 +29,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/books")
 @Api("Book API")
+@Slf4j
 public class BookController {
 
     private final BookService service;
@@ -39,7 +43,11 @@ public class BookController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("Create a new Book")
+    @ApiResponses({
+            @ApiResponse(code = 201, message = "Book created")
+    })
     public BookDTO create(@RequestBody @Valid BookDTO dto){
+        log.info("Creating a new book for isbn: {} ", dto.getIsbn());
         Book entity = modelMapper.map(dto, Book.class);
         entity = service.save(entity);
         return modelMapper.map(entity, BookDTO.class);
@@ -48,6 +56,7 @@ public class BookController {
     @GetMapping("{id}")
     @ApiOperation("Get a Book by Id")
     public BookDTO get(@PathVariable Long id){
+        log.info("Obtaining details of book id: {} ", id);
         return service.getById(id)
                 .map( book -> modelMapper.map(book, BookDTO.class))
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
@@ -57,6 +66,7 @@ public class BookController {
     @ApiOperation("Delete a Book by Id")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Long id){
+        log.info("Deleting a book of id: {} ", id);
         Book book = service.getById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         service.delete(book);
@@ -86,18 +96,5 @@ public class BookController {
                 .collect(Collectors.toList());
 
         return new PageImpl<BookDTO>(list, pageRequest, result.getTotalElements());
-    }
-
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ApiErrors handleValidationExceptions(MethodArgumentNotValidException ex){
-        BindingResult bindingResult = ex.getBindingResult();
-        return new ApiErrors(bindingResult);
-    }
-
-    @ExceptionHandler(BusinessException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ApiErrors handleBusinessExpection(BusinessException ex){
-        return new ApiErrors(ex);
     }
 }

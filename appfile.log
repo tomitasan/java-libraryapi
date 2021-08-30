@@ -1,0 +1,90 @@
+2021-08-30 14:12:31.363  INFO 26350 --- [main] c.c.l.api.resource.BookControllerTest    : Starting BookControllerTest using Java 11.0.11 on ni-39373-8u with PID 26350 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 14:12:31.369  INFO 26350 --- [main] c.c.l.api.resource.BookControllerTest    : The following profiles are active: test
+2021-08-30 14:12:32.788  INFO 26350 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 14:12:32.788  INFO 26350 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 14:12:32.789  INFO 26350 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-08-30 14:12:32.819  INFO 26350 --- [main] c.c.l.api.resource.BookControllerTest    : Started BookControllerTest in 1.854 seconds (JVM running for 2.962)
+2021-08-30 14:12:33.183  INFO 26350 --- [main] c.c.l.api.resource.BookController        : Creating a new book for isbn: 001 
+2021-08-30 14:12:33.194  INFO 26350 --- [main] c.c.l.api.resource.BookController        : Obtaining details of book id: 1 
+2021-08-30 14:12:33.205  INFO 26350 --- [main] c.c.l.api.resource.BookController        : Creating a new book for isbn: 001 
+2021-08-30 14:12:33.216  INFO 26350 --- [main] c.c.l.api.resource.BookController        : Deleting a book of id: 1 
+2021-08-30 14:12:33.224  INFO 26350 --- [main] c.c.l.api.resource.BookController        : Obtaining details of book id: 1 
+2021-08-30 14:12:33.232  INFO 26350 --- [main] c.c.l.api.resource.BookController        : Deleting a book of id: 1 
+2021-08-30 15:06:05.826  INFO 823 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 823 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:06:05.829  INFO 823 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 15:06:08.437  INFO 823 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:06:08.438  INFO 823 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:06:08.440  INFO 823 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-30 15:06:08.491  INFO 823 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 3.388 seconds (JVM running for 5.057)
+2021-08-30 15:09:13.991  INFO 1294 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 1294 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:09:13.994  INFO 1294 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 15:09:16.241  INFO 1294 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:09:16.243  INFO 1294 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:09:16.246  INFO 1294 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-30 15:09:16.302  INFO 1294 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 2.822 seconds (JVM running for 4.577)
+2021-08-30 15:14:12.252  INFO 2678 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 2678 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:14:12.253  INFO 2678 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 15:14:14.167  INFO 2678 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:14:14.167  INFO 2678 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:14:14.170  INFO 2678 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-30 15:14:14.205  INFO 2678 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 2.505 seconds (JVM running for 4.048)
+2021-08-30 15:15:39.301  INFO 2889 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 2889 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:15:39.303  INFO 2889 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 15:15:41.627  INFO 2889 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:15:41.628  INFO 2889 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:15:41.630  INFO 2889 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-30 15:15:41.685  INFO 2889 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 2.965 seconds (JVM running for 4.666)
+2021-08-30 15:33:06.277  INFO 5703 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 5703 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:33:06.278  INFO 5703 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 15:33:07.628  INFO 5703 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:33:07.628  INFO 5703 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:33:07.630  INFO 5703 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-08-30 15:33:07.657  INFO 5703 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 1.84 seconds (JVM running for 2.869)
+2021-08-30 15:34:48.792  INFO 5895 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 5895 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:34:48.793  INFO 5895 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 15:34:50.144  INFO 5895 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:34:50.144  INFO 5895 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:34:50.145  INFO 5895 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-08-30 15:34:50.175  INFO 5895 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 1.784 seconds (JVM running for 2.832)
+2021-08-30 15:39:16.542  INFO 6488 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 6488 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:39:16.544  INFO 6488 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 15:39:18.570  INFO 6488 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:39:18.570  INFO 6488 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:39:18.573  INFO 6488 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-30 15:39:18.612  INFO 6488 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 2.579 seconds (JVM running for 4.199)
+2021-08-30 15:45:57.890  INFO 7467 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 7467 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:45:57.891  INFO 7467 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 15:45:59.982  INFO 7467 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:45:59.982  INFO 7467 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:45:59.984  INFO 7467 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-08-30 15:46:00.031  INFO 7467 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 2.68 seconds (JVM running for 4.302)
+2021-08-30 15:48:06.925  INFO 7864 --- [main] c.c.l.api.resource.BookControllerTest    : Starting BookControllerTest using Java 11.0.11 on ni-39373-8u with PID 7864 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:48:06.926  INFO 7864 --- [main] c.c.l.api.resource.BookControllerTest    : The following profiles are active: test
+2021-08-30 15:48:08.287  INFO 7864 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:48:08.288  INFO 7864 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:48:08.289  INFO 7864 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-08-30 15:48:08.314  INFO 7864 --- [main] c.c.l.api.resource.BookControllerTest    : Started BookControllerTest in 1.724 seconds (JVM running for 2.709)
+2021-08-30 15:48:08.651  INFO 7864 --- [main] c.c.l.api.resource.BookController        : Creating a new book for isbn: 001 
+2021-08-30 15:48:08.664  INFO 7864 --- [main] c.c.l.api.resource.BookController        : Obtaining details of book id: 1 
+2021-08-30 15:48:08.675  INFO 7864 --- [main] c.c.l.api.resource.BookController        : Creating a new book for isbn: 001 
+2021-08-30 15:48:08.686  INFO 7864 --- [main] c.c.l.api.resource.BookController        : Deleting a book of id: 1 
+2021-08-30 15:48:08.696  INFO 7864 --- [main] c.c.l.api.resource.BookController        : Obtaining details of book id: 1 
+2021-08-30 15:48:08.706  INFO 7864 --- [main] c.c.l.api.resource.BookController        : Deleting a book of id: 1 
+2021-08-30 15:48:18.659  INFO 7952 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 7952 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 15:48:18.661  INFO 7952 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 15:48:20.030  INFO 7952 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 15:48:20.030  INFO 7952 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 15:48:20.032  INFO 7952 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-30 15:48:20.063  INFO 7952 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 1.767 seconds (JVM running for 2.754)
+2021-08-30 16:07:36.925  INFO 11593 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 11593 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 16:07:36.926  INFO 11593 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 16:07:39.053  INFO 11593 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 16:07:39.053  INFO 11593 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 16:07:39.055  INFO 11593 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-30 16:07:39.097  INFO 11593 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 2.776 seconds (JVM running for 4.461)
+2021-08-30 16:07:49.152  INFO 11657 --- [main] c.c.l.api.resource.LoanControllerTest    : Starting LoanControllerTest using Java 11.0.11 on ni-39373-8u with PID 11657 (started by atomita in /home/atomita/exercism/java/library-api)
+2021-08-30 16:07:49.154  INFO 11657 --- [main] c.c.l.api.resource.LoanControllerTest    : The following profiles are active: test
+2021-08-30 16:07:51.634  INFO 11657 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-08-30 16:07:51.634  INFO 11657 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-08-30 16:07:51.636  INFO 11657 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-08-30 16:07:51.683  INFO 11657 --- [main] c.c.l.api.resource.LoanControllerTest    : Started LoanControllerTest in 3.173 seconds (JVM running for 4.962)
