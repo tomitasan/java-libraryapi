@@ -1,18 +1,16 @@
 package com.cursodsousa.libraryapi.api.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
-public class LoanDTO {
+@NoArgsConstructor
+@Data
+public class ReturnedLoadDTO {
 
-    private Long id;
-    private String isbn;
-    private String customer;
-    private BookDTO book;
+    private Boolean returned;
 }

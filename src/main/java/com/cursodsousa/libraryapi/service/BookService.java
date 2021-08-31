@@ -1,6 +1,7 @@
 package com.cursodsousa.libraryapi.service;
 
 import com.cursodsousa.libraryapi.model.entity.Book;
+import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

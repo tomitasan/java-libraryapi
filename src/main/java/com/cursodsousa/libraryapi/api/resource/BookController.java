@@ -1,28 +1,27 @@
 package com.cursodsousa.libraryapi.api.resource;
 
 import com.cursodsousa.libraryapi.api.dto.BookDTO;
-import com.cursodsousa.libraryapi.api.exception.ApiErrors;
-import com.cursodsousa.libraryapi.exception.BusinessException;
+import com.cursodsousa.libraryapi.api.dto.LoanDTO;
 import com.cursodsousa.libraryapi.model.entity.Book;
+import com.cursodsousa.libraryapi.model.entity.Loan;
 import com.cursodsousa.libraryapi.service.BookService;
+import com.cursodsousa.libraryapi.service.LoanService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 
@@ -30,15 +29,12 @@ import java.util.stream.Collectors;
 @RequestMapping("/api/books")
 @Api("Book API")
 @Slf4j
+@RequiredArgsConstructor
 public class BookController {
 
     private final BookService service;
     private final ModelMapper modelMapper;
-
-    public BookController(BookService service, ModelMapper mapper){
-        this.service = service;
-        this.modelMapper = mapper;
-    }
+    private final LoanService loanService;
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -96,5 +92,22 @@ public class BookController {
                 .collect(Collectors.toList());
 
         return new PageImpl<BookDTO>(list, pageRequest, result.getTotalElements());
+    }
+
+    @GetMapping("{id}/loans")
+    public Page<LoanDTO> loansByBook(@PathVariable Long id, Pageable pageable){
+        Book book = service.getById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        Page<Loan> result = loanService.getLoansByBook(book, pageable);
+        List<LoanDTO> list = result.getContent()
+                .stream()
+                .map(loan -> {
+                    Book loanBook = loan.getBook();
+                    BookDTO bookDTO = modelMapper.map(loanBook, BookDTO.class);
+                    LoanDTO loanDTO = modelMapper.map(loan, LoanDTO.class);
+                    loanDTO.setBook(bookDTO);
+                    return loanDTO;
+                }).collect(Collectors.toList());
+
+        return new PageImpl<LoanDTO>(list, pageable, result.getTotalElements());
     }
 }
