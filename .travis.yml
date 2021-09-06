@@ -4,12 +4,6 @@ jdk:
   - openjdk11
 before_install:
   - chmod +x mvnw
-cache:
-  directories:
-    - $HOME/.m2
-install:
-  - curl -o $HOME/.m2/settings.xml
-    https://github.com/tomitasan/library-api/blob/master/settings.xml
-  - mvn dependency:go-offline
+  - rm ~/.m2/settings.xml
 script:
   - mvn clean install site
