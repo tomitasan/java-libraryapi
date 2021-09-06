@@ -4,9 +4,7 @@ jdk:
   - openjdk11
 before_install:
   - chmod +x mvnw
+  - rm ~/.m2/settings.xml
 cache:
   directories:
     - $HOME/.m2
-install:
-  - curl -o $HOME/.m2/settings.xml
-    https://github.com/tomitasan/library-api/blob/master/settings.xml
