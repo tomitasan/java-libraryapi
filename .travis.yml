@@ -1,5 +1,22 @@
+os:
+  - linux
 language: java
-dist: xenial
 
-jdk:
-  - openjdk11
+cache:
+  directories:
+    - $HOME/.m2
+env:
+  global:
+    - MAVEN_USER_HOME=$HOME/.m2/repository/
+
+  matrix:
+    - TRAVIS_JDK=adopt-openj9@1.12
+    - TRAVIS_JDK=adopt-openj9@1.11.0-4
+
+script:
+  - chmod +x mvnw
+  - java -version
+  - ./mvnw -ntp checkstyle:check
+  - ./mvnw -ntp clean verify
+  - ./mvnw -ntp verify -Pprod -DskipTests
+  - ./mvnw -ntp com.heroku.sdk:heroku-maven-plugin:2.0.5:deploy -DskipTests -Pprod -Dheroku.buildpacks=heroku/jvm -Dheroku.appName=kacetal-library-stock
