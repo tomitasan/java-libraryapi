@@ -1,6 +1,6 @@
 language: java
 jdk:
   - oraclejdk8
-dist: bionic
+dist: trusty
 before_install:
   - chmod +x mvnw
