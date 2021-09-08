@@ -24,12 +24,11 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 @RestController
 @RequestMapping("/api/books")
+@RequiredArgsConstructor
 @Api("Book API")
 @Slf4j
-@RequiredArgsConstructor
 public class BookController {
 
     private final BookService service;

@@ -29,6 +29,5 @@ public class EmailServiceImpl implements EmailService {
         mailMessage.setTo(mails);
 
         javaMailSender.send(mailMessage);
-
     }
 }

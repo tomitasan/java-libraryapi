@@ -1,8 +1,6 @@
 language: java
-os: linux
-dist: xenial
 jdk:
   - openjdk11
-sudo: enabled
+dist: bionic
 before_install:
   - chmod +x mvnw
