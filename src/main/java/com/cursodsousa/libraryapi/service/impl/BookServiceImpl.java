@@ -15,10 +15,9 @@ import java.util.Optional;
 @Service
 public class BookServiceImpl implements BookService {
 
-    //JPA repository
-    private final BookRepository repository;
+    private BookRepository repository;
 
-    public BookServiceImpl(BookRepository repository){
+    public BookServiceImpl(BookRepository repository) {
         this.repository = repository;
     }
 

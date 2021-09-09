@@ -18,25 +18,25 @@ public class SwaggerConfig {
     @Bean
     public Docket docket(){
         return new Docket(DocumentationType.SWAGGER_2)
-                .select()
-                .apis(RequestHandlerSelectors.basePackage("com.cursodsousa.libraryapi.api.resource"))
-                .paths(PathSelectors.any())
-                .build()
-                .apiInfo(apiInfo());
-
+                    .select()
+                    .apis( RequestHandlerSelectors.basePackage("com.cursodsousa.libraryapi.api.resource") )
+                    .paths(PathSelectors.any())
+                    .build()
+                    .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("LibraryApi")
-                .description("Projeto de uma Biblioteca")
-                .version("1.0")
-                .contact(contact())
-                .build();
+                    .title("Library API")
+                    .description("API do Projeto de controle de aluguel de livros")
+                    .version("1.0")
+                    .contact(contact())
+                    .build();
     }
 
     private Contact contact(){
-        return new Contact("Tomita", "", "");
+        return new Contact("Dougllas Sousa",
+                "http://github.com/dougllasfps",
+                "cursodsousa@gmail.com");
     }
 }
-

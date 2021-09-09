@@ -24,11 +24,11 @@ public class ScheduleService {
     @Scheduled(cron = CRON_LATE_LOANS)
     public void sendMailToLateLoans(){
         List<Loan> allLateLoans = loanService.getAllLateLoans();
-        List<String> mailList = allLateLoans.stream()
+        List<String> mailsList = allLateLoans.stream()
                 .map(loan -> loan.getCustomerEmail())
                 .collect(Collectors.toList());
 
-        emailService.sendMails(message, mailList);
+        emailService.sendMails(message, mailsList);
     }
 
 }

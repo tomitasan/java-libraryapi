@@ -11,6 +11,7 @@ import javax.validation.constraints.NotEmpty;
 @NoArgsConstructor
 @AllArgsConstructor
 public class BookDTO {
+
     private Long id;
 
     @NotEmpty

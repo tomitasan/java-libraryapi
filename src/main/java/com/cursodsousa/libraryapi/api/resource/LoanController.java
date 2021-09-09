@@ -34,11 +34,11 @@ public class LoanController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Long create(@RequestBody LoanDTO dto){
+    public Long create(@RequestBody LoanDTO dto) {
         Book book = bookService
                 .getBookByIsbn(dto.getIsbn())
-                .orElseThrow( () -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "Book not found for passed isbn"));
-
+                .orElseThrow(() -> 
+			new ResponseStatusException(HttpStatus.BAD_REQUEST, "Book not found for passed isbn"));
         Loan entity = Loan.builder()
                 .book(book)
                 .customer(dto.getCustomer())
@@ -46,34 +46,33 @@ public class LoanController {
                 .build();
 
         entity = service.save(entity);
-
         return entity.getId();
     }
 
     @PatchMapping("{id}")
-    public void returnBook(@PathVariable Long id, @RequestBody ReturnedLoadDTO dto){
-        Loan loan = service
-                .getById(id)
-                .orElseThrow( () -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    public void returnBook(
+            @PathVariable Long id,
+            @RequestBody ReturnedLoanDTO dto) {
+        Loan loan = service.getById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         loan.setReturned(dto.getReturned());
-
         service.update(loan);
     }
 
     @GetMapping
-    public Page<LoanDTO> find(LoanFilterDTO dto, Pageable pageRequest){
+    public Page<LoanDTO> find(LoanFilterDTO dto, Pageable pageRequest) {
         Page<Loan> result = service.find(dto, pageRequest);
         List<LoanDTO> loans = result
                 .getContent()
                 .stream()
                 .map(entity -> {
+
                     Book book = entity.getBook();
                     BookDTO bookDTO = modelMapper.map(book, BookDTO.class);
                     LoanDTO loanDTO = modelMapper.map(entity, LoanDTO.class);
                     loanDTO.setBook(bookDTO);
                     return loanDTO;
-                }).collect(Collectors.toList());
 
+                }).collect(Collectors.toList());
         return new PageImpl<LoanDTO>(loans, pageRequest, result.getTotalElements());
     }
 }

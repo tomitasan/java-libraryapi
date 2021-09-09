@@ -15,12 +15,13 @@ public class EmailServiceImpl implements EmailService {
 
     @Value("${application.mail.default-remetent}")
     private String remetent;
+
     private final JavaMailSender javaMailSender;
 
     @Override
-    public void sendMails(String message, List<String> mailList) {
+    public void sendMails(String message, List<String> mailsList) {
 
-        String[] mails = mailList.toArray(new String[mailList.size()]);
+        String[] mails = mailsList.toArray(new String[mailsList.size()]);
 
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setFrom(remetent);
