@@ -2,27 +2,19 @@ package com.cursodsousa.libraryapi.api.resource;
 
 import com.cursodsousa.libraryapi.api.dto.BookDTO;
 import com.cursodsousa.libraryapi.api.dto.LoanDTO;
-import com.cursodsousa.libraryapi.api.exception.ApiErros;
-import com.cursodsousa.libraryapi.exception.BusinessException;
 import com.cursodsousa.libraryapi.model.entity.Book;
 import com.cursodsousa.libraryapi.model.entity.Loan;
 import com.cursodsousa.libraryapi.service.BookService;
 import com.cursodsousa.libraryapi.service.LoanService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 

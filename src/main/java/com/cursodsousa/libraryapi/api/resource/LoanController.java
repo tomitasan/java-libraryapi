@@ -3,7 +3,7 @@ package com.cursodsousa.libraryapi.api.resource;
 import com.cursodsousa.libraryapi.api.dto.BookDTO;
 import com.cursodsousa.libraryapi.api.dto.LoanDTO;
 import com.cursodsousa.libraryapi.api.dto.LoanFilterDTO;
-import com.cursodsousa.libraryapi.api.dto.ReturnedLoadDTO;
+import com.cursodsousa.libraryapi.api.dto.ReturnedLoanDTO;
 import com.cursodsousa.libraryapi.model.entity.Book;
 import com.cursodsousa.libraryapi.model.entity.Loan;
 import com.cursodsousa.libraryapi.service.BookService;
@@ -12,7 +12,6 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +19,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 @RestController

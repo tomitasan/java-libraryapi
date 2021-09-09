@@ -35,8 +35,8 @@ public class SwaggerConfig {
     }
 
     private Contact contact(){
-        return new Contact("Dougllas Sousa",
-                "http://github.com/dougllasfps",
-                "cursodsousa@gmail.com");
+        return new Contact("Tomita",
+                "http://github.com/tomitasan",
+                "antonio.tomita@gmail.com");
     }
 }
